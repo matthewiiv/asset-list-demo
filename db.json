@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "type": "Van",
+      "name": "Ford Transit",
+      "quantity": "1",
+      "make": "Ford",
+      "model": "Transit",
+      "regNumber": "LB11FDM",
+      "id": 1
+    },
+    {
+      "type": "Van",
+      "name": "Renault Trafic",
+      "quantity": "2",
+      "make": "Renault",
+      "model": "Trafic",
+      "regNumber": "BP99NPC, KR15HNA",
+      "id": 2
+    },
+    {
+      "type": "PC",
+      "name": "Lenovo Ideapad",
+      "quantity": "16",
+      "manufacturer": "Lenovo",
+      "model": "Ideapad 320",
+      "price": "399.99",
+      "id": 3
+    },
+    {
+      "type": "Printer",
+      "name": "Xerox Workcentre",
+      "quantity": "1",
+      "make": "Xerox",
+      "colour": "B&W",
+      "serial": "XV838HGURI3944F",
+      "id": 4
+    },
+    {
+      "type": "Car",
+      "name": "Renault Clio",
+      "quantity": "1",
+      "make": "Renault",
+      "model": "Clio",
+      "regNumber": "MR51SNG",
+      "id": 5
+    },
+    {
+      "type": "Printer",
+      "name": "Lexmark Colour",
+      "quantity": "5",
+      "make": "Lexmark MX910",
+      "colour": "Colour",
+      "serial": "",
+      "id": 6
+    }
+  ]
+}

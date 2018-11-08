@@ -1,0 +1,13 @@
+<h2>Create asset:</h2>
+
+<form class="form-container" [formGroup]="assetForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-select placeholder="Type" formControlName="type" (selectionChange)="changeType($event.value)" required>
+      <mat-option value="Van">Van</mat-option>
+      <mat-option value="Car">Car</mat-option>
+      <mat-option value="PC">PC</mat-option>
+      <mat-option value="Printer">Printer</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button color="warn" mat-raised-button routerLink="/">Back</button>
+</form>

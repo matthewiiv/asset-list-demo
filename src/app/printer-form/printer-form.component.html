@@ -1,0 +1,40 @@
+<form class="form-container" [formGroup]="assetForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-select placeholder="Type" formControlName="type" (selectionChange)="changeType($event.value)" required>
+      <mat-option value="Van">Van</mat-option>
+      <mat-option value="Car">Car</mat-option>
+      <mat-option value="Printer">Printer</mat-option>
+      <mat-option value="PC">PC</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field hintLabel="Only a-Z characters">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" pattern="[a-zA-Z ]*" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Make</mat-label>
+    <input matInput formControlName="make">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Colour" formControlName="colour">
+      <mat-option value="Colour">Colour</mat-option>
+      <mat-option value="B&W">B&W</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Serial Number</mat-label>
+    <input matInput formControlName="serial">
+  </mat-form-field>
+
+  <button type="submit" color="primary" mat-raised-button [disabled]="!assetForm.valid">Save</button>
+  <button color="warn" mat-raised-button routerLink="/">Back</button>
+</form>

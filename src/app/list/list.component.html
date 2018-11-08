@@ -1,0 +1,275 @@
+<mat-tab-group (selectedTabChange)="filterAssets($event)">
+  <mat-tab label="All">
+    <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="warn" (click)="deleteAsset(asset.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="accent" routerLink="/{{asset.type.toLowerCase()}}/{{asset.id}}">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-tab>
+  <mat-tab label="Vans">
+    <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="make">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Make </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.make}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.model}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="regNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> License Plate </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.regNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="warn" (click)="deleteAsset(asset.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="accent" routerLink="/{{asset.type.toLowerCase()}}/{{asset.id}}">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedVanColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedVanColumns;"></tr>
+    </table>
+  </mat-tab>
+
+  <mat-tab label="Cars">
+    <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="make">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Make </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.make}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.model}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="regNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> License Plate </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.regNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="warn" (click)="deleteAsset(asset.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="accent" routerLink="/{{asset.type.toLowerCase()}}/{{asset.id}}">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedCarColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedCarColumns;"></tr>
+    </table>
+  </mat-tab>
+
+  <mat-tab label="PCs">
+    <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="manufacturer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Manufacturer </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.manufacturer}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.model}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="warn" (click)="deleteAsset(asset.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="accent" routerLink="/{{asset.type.toLowerCase()}}/{{asset.id}}">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedPCColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedPCColumns;"></tr>
+    </table>
+  </mat-tab>
+
+  <mat-tab label="Printers">
+    <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="make">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Make </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.make}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="colour">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Colour </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.colour}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="serial">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Serial Number </th>
+        <td mat-cell *matCellDef="let asset"> {{asset.serial}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="warn" (click)="deleteAsset(asset.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let asset">
+          <button mat-icon-button color="accent" routerLink="/{{asset.type.toLowerCase()}}/{{asset.id}}">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedPrinterColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedPrinterColumns;"></tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>
