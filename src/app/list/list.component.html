@@ -1,3 +1,6 @@
+<!-- Define asset list html -->
+<!-- Changing tabs displays extra columns and filters asset list by type -->
+<!-- html for each asset type is hardcoded -->
 <mat-tab-group (selectedTabChange)="filterAssets($event)">
   <mat-tab label="All">
     <table mat-table [dataSource]=assets class="mat-elevation-z8" matSort>

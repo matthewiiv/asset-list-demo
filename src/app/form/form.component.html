@@ -1,6 +1,9 @@
+<!-- Single dropdown allowing user to select asset type.
+Navigates to relevant form component -->
+
 <h2>Create asset:</h2>
 
-<form class="form-container" [formGroup]="assetForm" (ngSubmit)="onSubmit()">
+<form class="form-container" [formGroup]="assetForm">
   <mat-form-field>
     <mat-select placeholder="Type" formControlName="type" (selectionChange)="changeType($event.value)" required>
       <mat-option value="Van">Van</mat-option>

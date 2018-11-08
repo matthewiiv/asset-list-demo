@@ -1,27 +1,27 @@
 # AssetListDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+This is a demo app for a Frontend technical test
+
+To run:
+
+`npm install`
+
+Start JSON server
+
+`json-server --watch db.json`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Open a new terminal window and run:
 
-## Code scaffolding
+Run `ng serve -o` for a dev server. This will open a tab in your browser at http://localhost:4200/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Improvements
 
-## Running unit tests
+Build generic form component that shows fields dynamically depending on asset type
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Checkboxes to allow user to perform actions on multiple list items at once
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Allow user ability to create new asset type / decide fields

@@ -7,6 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormComponent } from './form/form.component';
+import { VanFormComponent } from './van-form/van-form.component';
+import { CarFormComponent } from './car-form/car-form.component';
+import { PcFormComponent } from './pc-form/pc-form.component';
+import { PrinterFormComponent } from './printer-form/printer-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -45,12 +51,6 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from '@angular/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormComponent } from './form/form.component';
-import { VanFormComponent } from './van-form/van-form.component';
-import { CarFormComponent } from './car-form/car-form.component';
-import { PcFormComponent } from './pc-form/pc-form.component';
-import { PrinterFormComponent } from './printer-form/printer-form.component';
 
 @NgModule({
   declarations: [

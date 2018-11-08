@@ -16,14 +16,16 @@ export interface Asset {
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  // Define columns for various asset types
   displayedColumns: string[] = ['type', 'name', 'quantity', 'delete', 'edit'];
   displayedVanColumns: string[] = ['type', 'name', 'quantity', 'make', 'model', 'regNumber', 'delete', 'edit'];
   displayedCarColumns: string[] = ['type', 'name', 'quantity', 'make', 'model', 'regNumber', 'delete', 'edit'];
   displayedPCColumns: string[] = ['type', 'name', 'quantity', 'manufacturer', 'model', 'price', 'delete', 'edit'];
   displayedPrinterColumns: string[] = ['type', 'name', 'quantity', 'make', 'colour', 'serial', 'delete', 'edit'];
 
-  assets;
+  public assets;
+
+  // Define custom filter that modifies displayed asset list based on type property
 
   public filterAssets(event) {
     const filterValue = event.tab.textLabel;
@@ -41,6 +43,8 @@ export class ListComponent implements OnInit {
 
   constructor(private data: AssetDataService, private router: Router) { }
 
+  // Remove asset from db then get and render modified asset list
+
   public deleteAsset = (id: string) => {
     this.data.deleteAsset(id).subscribe((data) => {
       this.data.getAssets().subscribe((assetData: {id: number, type: string, name: string, quantity: number }[]) => {
@@ -49,6 +53,8 @@ export class ListComponent implements OnInit {
       });
     })
   }
+
+  // Get asset list and use to create material design table. Add column sort functionality
 
   ngOnInit() {
     this.data.getAssets().subscribe((data: {id: number, type: string, name: string, quantity: number }[]) => {

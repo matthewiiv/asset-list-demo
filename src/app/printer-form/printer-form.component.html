@@ -1,5 +1,8 @@
+<!-- Printer form component. Contains fields particular to this asset type -->
+
 <form class="form-container" [formGroup]="assetForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
+    <!-- Changing component type navigates to correct form -->
     <mat-select placeholder="Type" formControlName="type" (selectionChange)="changeType($event.value)" required>
       <mat-option value="Van">Van</mat-option>
       <mat-option value="Car">Car</mat-option>
@@ -35,6 +38,7 @@
     <input matInput formControlName="serial">
   </mat-form-field>
 
+  <!-- Submission only available when required fields are populated and have valid values -->
   <button type="submit" color="primary" mat-raised-button [disabled]="!assetForm.valid">Save</button>
   <button color="warn" mat-raised-button routerLink="/">Back</button>
 </form>

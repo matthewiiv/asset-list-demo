@@ -8,6 +8,8 @@ export class AssetDataService {
 
   constructor(private http: HttpClient) { }
 
+  // Basic api calls
+
   getAssets() {
     return this.http.get('http://localhost:3000/assets')
   }
